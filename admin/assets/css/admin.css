@@ -1,0 +1,1026 @@
+/*==================================================================
+    RESET E ESTILOS GLOBAIS
+===================================================================*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/*==================================================================
+    CONTAINER PRINCIPAL DO ADMIN
+===================================================================*/
+.admin-container{
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/*==================================================================
+    SIDEBAR (MENU LATERL)
+===================================================================*/
+
+.sidebar{
+    width: 260px;
+    min-width: 260px;
+    background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 30px 20px;
+    box-shadow: 2px0 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h2{
+    margin-bottom: 40px;
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 15px;
+}
+
+.sidebar a{
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.sidebar a:hover{
+    background: #3498db;
+    padding-left: 20px;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.3);
+}
+
+.sidebar a.active{
+    background: #3498db;
+    font-weight: bold;
+}
+
+/*==================================================================
+    CONTEUDO PRINCIPAL
+===================================================================*/
+
+.main-content{
+    flex:1;
+    margin-left: 260px;
+    padding: 40px 50px;
+    background: #f4f6f9;
+    min-height: 100vh;
+    width: calc(100% - 260px);
+}
+
+/*==================================================================
+    HEADER (CABEÇALHO DAS PAGINAS
+===================================================================*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header h1{
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.logout-btn{
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(231,76,60,0.2);
+}
+.logout-btn:hover{
+    background: #c0392b;
+    box-shadow: 0 4px 8px rgba(231,76,60,0.3);
+    transform: translateY(-2px)
+}
+/*==================================================================
+    BOTOES
+===================================================================*/
+.add-product-btn,
+.btn-primary,
+.btn-success {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: background-color 0.2s ease;
+}
+.add-product-btn:hover,
+.btn-primary:hover,
+.btn-success:hover {
+    background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+    box-shadow: 0 5px 15px rgba(46,204,113,0.4);
+}
+/*==================================================================
+    TABELAS DOS PRODUTOS
+===================================================================*/
+.product-table{
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 10px;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+.product-table thead{
+    background: linear-gradient(135deg, #3495db 0%, #2980b9 100%);
+    color: white;
+}
+
+.product-table th{
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.product-table td{
+    padding: 12px;
+    border-bottom: 1px solid #ecf0f1;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-table tbody tr{
+    background: #f8f9fa;
+}
+
+.product-table img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 2px solid #ecf0f1;
+}
+/*==================================================================
+    AÇOES DA TABEL (EDITAR E EXLUIR)
+===================================================================*/
+.actions{
+    display: flex;
+    gap: 8px;
+}
+.actions a,
+.actions button{
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.actions .edit-btn{
+    background: #3498db;
+    box-shadow: 0 2px 5px rgba(52,152,219,0.2);
+}
+
+.actions .edit-btn:hover{
+    background: #2980db;
+    box-shadow: 0 3px 8px rgba(52,152,219,0.3);
+    transform: translateY(-1px)
+}
+
+.actions .delete-btn{
+    background: #e74c3c;
+    box-shadow: 0 2px 5px rgba(231,76,60,0.2);
+}
+.actions .delete-btn:hover{
+    background: #c0392b;
+    box-shadow: 0 3px 8px rgba(231,76,60,0.2);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+    FORMULÁRIO DE PRODUTO
+   ============================================ */
+.product-form-container {
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #3498db;
+    background: #f8f9fa;
+}
+
+/* ============================================
+   PREVIEW DE IMAGEM
+   ============================================ */
+.image-preview {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.image-preview p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.image-preview img {
+    max-width: 200px;
+    height: auto;
+    border: 2px solid #e0e0e0;
+    padding: 5px;
+    border-radius: 6px;
+    background: white;
+}
+
+/* ============================================
+    AÇÕES DO FORMULÁRIO
+   ============================================ */
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+}
+
+.form-actions button,
+.form-actions a {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.form-actions button[type="submit"] {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+}
+
+.form-actions button[type="submit"]:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #21618c 100%);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+.form-actions .cancel-btn {
+    background: #95a5a6;
+    color: white;
+    box-shadow: 0 3px 10px rgba(149, 165, 166, 0.3);
+}
+
+.form-actions .cancel-btn:hover {
+    background: #7f8c8d;
+    box-shadow: 0 5px 15px rgba(149, 165, 166, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Efeito hover mais agressivo para o botão delete */
+.actions .delete-btn {
+    background: #e74c3c;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.2);
+}
+
+.actions .delete-btn:hover {
+    background: #c0392b;
+    box-shadow: 0 3px 8px rgba(231, 76, 60, 0.5);
+    transform: translateY(-1px) scale(1.05);
+}
+
+.actions .delete-btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
+/* ============================================
+    MENSAGENS DE ALERTA/SUCESSO
+   ============================================ */
+.alert {
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+/* ============================================
+    RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .product-table {
+        font-size: 12px;
+    }
+
+    .product-table th,
+    .product-table td {
+        padding: 8px 6px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
+
+/* ============================================
+        UTILITÁRIOS
+   ============================================ */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.alert {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Estilos para a página de listagem de Pedidos (admin/pages/orders.php) --- */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.admin-table th, .admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.admin-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.admin-table tbody tr{
+    font-size: 0.8em;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilos para os status dos pedidos */
+.status-pending { color: #FFA500; font-weight: bold; } /* Laranja */
+.status-paid { color: #28A745; font-weight: bold; }    /* Verde */
+.status-processing { color: #007BFF; font-weight: bold; } /* Azul */
+.status-shipped { color: #6C757D; font-weight: bold; }  /* Cinza */
+.status-delivered { color: #17A2B8; font-weight: bold; } /* Azul claro */
+.status-canceled { color: #DC3545; font-weight: bold; }  /* Vermelho */
+.status-refunded { color: #FFC107; font-weight: bold; } /* Amarelo */
+
+/* Estilos para botões dentro da tabela */
+.admin-table .btn {
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: background-color 0.3s ease;
+}
+
+.admin-table .btn-sm { /* Botão "Ver" */
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+}
+
+.admin-table .btn-sm:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* --- Estilos para a página de visualização de Pedido (admin/pages/order_view.php) --- */
+
+.order-admin-details {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.order-admin-details h2 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.order-admin-details h2:first-of-type {
+    margin-top: 0; /* Remove margin-top do primeiro h2 */
+}
+
+.order-admin-details p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.order-admin-details p strong {
+    color: #333;
+    display: inline-block;
+    min-width: 120px; /* Alinha os dois pontos */
+}
+
+.order-admin-details address {
+    font-style: normal;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Estilos para a tabela de itens do pedido dentro da visualização */
+.order-admin-details .admin-table {
+    margin-top: 20px;
+}
+
+/* Botão "Voltar" na página de detalhes do pedido */
+.header .btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9em;
+    background-color: #6c757d; /* Cinza */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.header .btn:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos para o container principal do admin (se ainda não tiver) */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f7f6; /* Fundo leve para o admin */
+}
+
+.admin-siderbar { /* Ajuste o nome da classe se for diferente no seu sidebar */
+    width: 220px;
+    background-color: #2c3e50; /* Cor escura para o sidebar */
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.admin-siderbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-siderbar ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-siderbar ul li a:hover,
+.admin-siderbar ul li a.active {
+    background-color: #34495e;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.main-content .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.main-content .header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 2em;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c82333;
+}
+
+/* Estilos para alertas */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-error, .alert-danger { /* Usando alert-danger para consistência */
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+.order-status-form {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.order-status-form .form-group {
+    margin-bottom: 12px;
+}
+
+.order-status-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.order-status-form select,
+.order-status-form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.95em;
+}
+
+.order-status-form .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.order-status-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.order-admin-details h2 {
+    margin-top: 30px;
+}
+
+/* --- Dashboard Styles --- */
+
+/* Container principal do dashboard */
+.main-content {
+    padding: 20px; /* Adiciona um padding geral para o conteúdo */
+}
+
+/* Títulos das seções */
+.main-content h1 {
+    margin-bottom: 25px;
+    color: #343a40;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+/* Estilo para a linha de cards (se você tiver uma div.row envolvendo-os) */
+.row {
+    margin-left: -15px; /* Ajusta o espaçamento das colunas do Bootstrap */
+    margin-right: -15px;
+}
+.row > [class*="col-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Cards de Métricas (Dashboard-Card) */
+.dashboard-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0; /* Borda suave */
+    border-radius: 0.75rem; /* Cantos mais arredondados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais pronunciada */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transição suave */
+    display: flex; /* Para alinhar conteúdo verticalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px; /* Altura mínima para uniformidade */
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px); /* Efeito de "levantar" ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra maior no hover */
+}
+
+.dashboard-card h4 {
+    font-size: 1.1rem; /* Título um pouco maior */
+    color: #6c757d; /* Cor cinza para o título */
+    margin-bottom: 0.75rem; /* Mais espaço abaixo do título */
+    font-weight: 500;
+}
+
+.dashboard-card p {
+    font-size: 2.5rem; /* Número maior e mais impactante */
+    font-weight: 700; /* Mais negrito */
+    color: #343a40; /* Cor escura para o número */
+    margin-bottom: 0;
+    line-height: 1; /* Garante que o número não quebre a linha */
+}
+
+/* Cores de fundo para os cards (usando !important para garantir) */
+.dashboard-card.bg-primary { background-color: #007bff !important; color: #fff !important; }
+.dashboard-card.bg-success { background-color: #28a745 !important; color: #fff !important; }
+.dashboard-card.bg-warning { background-color: #ffc107 !important; color: #212529 !important; } /* Texto escuro para fundo claro */
+.dashboard-card.bg-info { background-color: #17a2b8 !important; color: #fff !important; }
+.dashboard-card.bg-danger { background-color: #dc3545 !important; color: #fff !important; }
+.dashboard-card.bg-secondary { background-color: #6c757d !important; color: #fff !important; }
+.dashboard-card.bg-dark { background-color: #343a40 !important; color: #fff !important; } /* Para Receita Total */
+
+/* Ajustes para o texto dentro dos cards coloridos */
+.dashboard-card.bg-primary h4, .dashboard-card.bg-success h4, .dashboard-card.bg-info h4, .dashboard-card.bg-danger h4, .dashboard-card.bg-secondary h4, .dashboard-card.bg-dark h4 {
+    color: rgba(255, 255, 255, 0.8) !important; /* Títulos um pouco mais claros */
+}
+.dashboard-card.bg-primary p, .dashboard-card.bg-success p, .dashboard-card.bg-info p, .dashboard-card.bg-danger p, .dashboard-card.bg-secondary p, .dashboard-card.bg-dark p {
+    color: #fff !important; /* Números brancos */
+}
+/* Exceção para o card de warning, que tem fundo claro */
+.dashboard-card.bg-warning h4 { color: rgba(0, 0, 0, 0.7) !important; }
+.dashboard-card.bg-warning p { color: #212529 !important; }
+
+
+/* Estilos para os cards de gráficos e listas (Últimos Pedidos, Baixo Estoque) */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem; /* Espaçamento entre os cards */
+}
+
+.card-header {
+    background-color: #f8f9fa; /* Fundo mais claro para o cabeçalho */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #343a40;
+    border-top-left-radius: 0.75rem; /* Arredonda cantos do header */
+    border-top-right-radius: 0.75rem;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* --- Estilos para Listas dentro dos Cards (Últimos Pedidos, Baixo Estoque) --- */
+
+/* Garante que os marcadores de lista sejam removidos */
+.list-group {
+    padding-left: 0; /* Remove o padding padrão que cria o espaço para as bolinhas */
+    list-style: none; /* Remove as bolinhas/marcadores */
+    margin-bottom: 0; /* Remove margem inferior padrão da ul */
+}
+
+.list-group-item {
+    border: none; /* Remove bordas padrão dos itens de lista */
+    border-bottom: 1px solid #eee; /* Adiciona uma linha divisória suave */
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+    color: #495057;
+    background-color: transparent; /* Garante que o fundo do item seja transparente */
+}
+.list-group-item:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+}
+.list-group-item a {
+    color: #007bff; /* Cor do link */
+    text-decoration: none;
+    font-weight: 500;
+}
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+/* Adicione aqui quaisquer outros estilos que você já tenha no admin.css */
+
+/* Badges de status (para Últimos Pedidos) */
+.status-pending, .status-paid, .status-processing, .status-shipped, .status-delivered, .status-canceled, .status-refunded {
+    padding: .3em .6em; /* Aumenta um pouco o padding */
+    border-radius: .3rem; /* Mais arredondado */
+    font-size: 0.85em; /* Tamanho da fonte */
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline;
+    display: inline-block;
+    text-align: center;
+    color: #fff; /* Cor do texto padrão para badges */
+}
+
+/* Cores específicas para cada status (usando !important para garantir) */
+.status-pending { background-color: #6c757d !important; } /* secondary */
+.status-paid { background-color: #17a2b8 !important; } /* info */
+.status-processing { background-color: #007bff !important; } /* primary */
+.status-shipped { background-color: #ffc107 !important; color: #212529 !important; } /* warning, texto escuro */
+.status-delivered { background-color: #28a745 !important; } /* success */
+.status-canceled { background-color: #dc3545 !important; } /* danger */
+.status-refunded { background-color: #343a40 !important; } /* dark */
+
+/* Badge para estoque baixo */
+.badge.bg-danger.rounded-pill {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    padding: .3em .6em;
+    border-radius: 1rem; /* Mais arredondado */
+    font-size: 0.85em;
+}
+
+/* Ajustes para o layout do sidebar e main-content se necessário */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-siderbar { /* Verifique o nome da sua classe do sidebar */
+    width: 250px; /* Largura fixa do sidebar */
+    background-color: #343a40; /* Cor de fundo do sidebar */
+    color: #fff;
+    padding: 20px;
+    flex-shrink: 0; /* Não permite que o sidebar encolha */
+}
+
+.main-content {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+    padding: 20px;
+    background-color: #f4f7f6; /* Fundo suave para o conteúdo principal */
+}
+
+ .pagination {
+    margin-top: 20px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.pagination .page-link {
+    padding: 6px 12px;
+    background: #eee;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.pagination .page-link:hover {
+    background: #ddd;
+}
+
+.pagination .page-link.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+.filter-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-form input,
+.filter-form select {
+    padding: 6px;
+}
+
+.btn{
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(231,76,60,0.2);
+}
+.btn{
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(231,76,60,0.2);
+}
+
+.btn:hover{
+    background: #229954;
+    box-shadow: 0 4px 8px rgba(231,76,60,0.3);
+    transform: translateY(-2px)
+}
+
+.filter-form input[type="text"],
+.filter-form select {
+    width:50%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fdfdfd;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-form input[type="text"]:focus,
+.filter-form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+    outline: none;
+}
+

@@ -1,0 +1,12 @@
+Options -Indexes
+RewriteEngine On
+
+# Ignora arquivos e diretórios que realmente existem
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Se existe o arquivo .php correspondente, usa ele internamente
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
+DirectoryIndex index.php

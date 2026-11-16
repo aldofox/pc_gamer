@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Pedido - GamerStore</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:20px; }
+        .email-wrapper { max-width: 700px; margin: 0 auto; background: #ffffff; border-radius: 6px; overflow: hidden; }
+        .email-header { background: #111827; color: #fff; padding: 20px; text-align: center; }
+        .email-header h1 { margin: 0; font-size: 22px; }
+        .email-body { padding: 20px 25px 30px; color:#333; }
+        .email-body p { font-size: 14px; line-height: 1.6; }
+        .order-summary { margin-top: 20px; font-size: 14px; }
+        .order-summary h2 { font-size: 18px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .items-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .items-table th, .items-table td { padding: 8px 6px; font-size: 13px; border-bottom: 1px solid #eee; text-align: left; }
+        .items-table th { background: #f9fafb; font-weight: bold; }
+        .text-right { text-align: right; }
+        .totals { margin-top: 10px; font-size: 14px; }
+        .totals table { width: 100%; border-collapse: collapse; }
+        .totals td { padding: 4px 0; }
+        .totals .total-row td { font-weight: bold; font-size: 15px; }
+        .email-footer { background:#f9fafb; padding:15px 20px; font-size:12px; color:#666; text-align:center; }
+    </style>
+</head>
+<body>
+<div class="email-wrapper">
+    <div class="email-header">
+        <h1>GamerStore - Confirmação de Pedido</h1>
+    </div>
+    <div class="email-body">
+        <p>Olá, <strong>[CUSTOMER_NAME]</strong>,</p>
+        <p>
+            Obrigado por sua compra na <strong>GamerStore</strong>!<br>
+            Seu pedido <strong>#[ORDER_NUMBER]</strong> foi recebido em <strong>[ORDER_DATE]</strong> e está com status 
+            <strong>[ORDER_STATUS]</strong>.
+        </p>
+
+        <div class="order-summary">
+            <h2>Detalhes do Pedido</h2>
+            <p><strong>Número do Pedido:</strong> #[ORDER_NUMBER]</p>
+            <p><strong>Método de Pagamento:</strong> [PAYMENT_METHOD]</p>
+
+            <h3>Endereço de Entrega:</h3>
+            <p>[SHIPPING_ADDRESS]</p>
+
+            <h3>Itens do Pedido:</h3>
+            <table class="items-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th style="width: 60px;">Qtd</th>
+                        <th style="width: 100px;" class="text-right">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <!-- ITENS_DO_PEDIDO -->
+                    <tr>
+                        <td>[ITEM_NAME]</td>
+                        <td>[ITEM_QUANTITY]</td>
+                        <td class="text-right">[ITEM_SUBTOTAL]</td>
+                    </tr>
+                <!-- /ITENS_DO_PEDIDO -->
+                </tbody>
+            </table>
+
+            <div class="totals">
+                <table>
+                    <tr>
+                        <td>Subtotal dos Produtos:</td>
+                        <td class="text-right">[PRODUCTS_SUBTOTAL]</td>
+                    </tr>
+                    <tr>
+                        <td>Frete:</td>
+                        <td class="text-right">[SHIPPING_COST]</td>
+                    </tr>
+                    <tr>
+                        <td>Desconto:</td>
+                        <td class="text-right">[DISCOUNT_AMOUNT]</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total do Pedido:</td>
+                        <td class="text-right">[ORDER_TOTAL]</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <p style="margin-top:25px;">
+            Você pode acompanhar o status do seu pedido acessando sua conta em:<br>
+            <a href="[SITE_URL]" target="_blank">[SITE_URL]</a>
+        </p>
+    </div>
+    <div class="email-footer">
+        &copy; [CURRENT_YEAR] GamerStore. Todos os direitos reservados.
+    </div>
+</div>
+</body>
+</html>

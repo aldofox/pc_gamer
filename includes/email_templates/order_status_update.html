@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização do Pedido - GamerStore</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin:0; padding:20px; }
+        .email-wrapper { max-width: 700px; margin: 0 auto; background: #ffffff; border-radius: 6px; overflow: hidden; }
+        .email-header { background: #111827; color: #fff; padding: 20px; text-align: center; }
+        .email-header h1 { margin: 0; font-size: 22px; }
+        .email-body { padding: 20px 25px 30px; color:#333; }
+        .email-body p { font-size: 14px; line-height: 1.6; }
+        .status-box { background:#f9fafb; border-left:4px solid #4f46e5; padding:12px 15px; margin:15px 0; font-size:14px; }
+        .status-label { font-weight:bold; }
+        .order-summary { margin-top: 10px; font-size: 14px; }
+        .order-summary h2 { font-size: 18px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .totals { margin-top: 10px; font-size: 14px; }
+        .totals table { width: 100%; border-collapse: collapse; }
+        .totals td { padding: 4px 0; }
+        .totals .total-row td { font-weight: bold; font-size: 15px; }
+        .email-footer { background:#f9fafb; padding:15px 20px; font-size:12px; color:#666; text-align:center; }
+    </style>
+</head>
+<body>
+    <div class="email-wrapper">
+    <div class="email-header">
+        <h1>Atualização do seu Pedido - GamerStore</h1>
+    </div>
+    <div class="email-body">
+        <p>Olá, <strong>[CUSTOMER_NAME]</strong>,</p>
+
+        <p>Seu pedido <strong>#[ORDER_NUMBER]</strong>, realizado em <strong>[ORDER_DATE]</strong>, teve uma atualização de status.</p>
+
+        <div class="status-box">
+            <span class="status-label">Status atual:</span>
+            <span>[ORDER_STATUS]</span><br>
+            <span>[STATUS_MESSAGE]</span>
+        </div>
+
+        <div class="order-summary">
+            <h2>Resumo do Pedido</h2>
+            <p><strong>Número do Pedido:</strong> #[ORDER_NUMBER]</p>
+
+            <h3>Endereço de Entrega:</h3>
+            <p>[SHIPPING_ADDRESS]</p>
+
+            <div class="totals">
+                <table>
+                    <tr>
+                        <td>Subtotal dos Produtos:</td>
+                        <td style="text-align:right;">[PRODUCTS_SUBTOTAL]</td>
+                    </tr>
+                    <tr>
+                        <td>Frete:</td>
+                        <td style="text-align:right;">[SHIPPING_COST]</td>
+                    </tr>
+                    <tr>
+                        <td>Desconto:</td>
+                        <td style="text-align:right;">[DISCOUNT_AMOUNT]</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>Total do Pedido:</td>
+                        <td style="text-align:right;">[ORDER_TOTAL]</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <p style="margin-top:20px;">
+            Você pode acompanhar o andamento do seu pedido acessando sua conta em:<br>
+            <a href="[SITE_URL]" target="_blank">[SITE_URL]</a>
+        </p>
+    </div>
+    <div class="email-footer">
+        &copy; [CURRENT_YEAR] GamerStore. Todos os direitos reservados.
+    </div>
+</div>
+</body>
+</html>
